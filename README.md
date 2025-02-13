@@ -1,0 +1,1 @@
+# repository-linter-conig-checker
