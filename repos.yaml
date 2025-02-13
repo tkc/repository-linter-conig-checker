@@ -1,0 +1,3 @@
+repositories:
+  - "https://github.com/tkc/python-linter-doc"
+  - "https://github.com/other/repo-example"
