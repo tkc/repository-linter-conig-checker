@@ -50,21 +50,11 @@ def main(yaml_file: str) -> pd.DataFrame:
         data = yaml.safe_load(f)
     repo_urls: List[str] = data.get("repositories", [])
 
-    # # all_dfs: List[pd.DataFrame] = []
-    # for repo_url in repo_urls:
     logger.info("Processing repository", repo_url=repo_urls)
     process_repository(repo_urls)
-        # all_dfs.append(df_repo)
-
-    # if all_dfs:
-    #     final_df = pd.concat(all_dfs, ignore_index=True)
-    # else:
-    #     final_df = pd.DataFrame()
-    # return final_df
 
 
 if __name__ == "__main__":
     yaml_file = "repos.yaml"  # リポジトリ URL リストを含む YAML ファイル
     main(yaml_file)
-    # print(final_df)
-    # final_df.to_csv("linter_check_report.csv", index=False)
+
