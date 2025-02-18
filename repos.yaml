@@ -1,3 +1,4 @@
 repositories:
-  - "https://github.com/tkc/python-linter-doc"
-  - "https://github.com/other/repo-example"
+  - "tkc/python-linter-doc"
+  - "tkc/react-admin-sandbox"
+  - "tkc/ts-express-clean-architecture-sandbox"

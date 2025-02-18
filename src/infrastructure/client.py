@@ -43,3 +43,15 @@ def get_file_content(api_url: str) -> Optional[str]:
     if "content" in data:
         return b64decode(data["content"]).decode("utf-8")
     return None
+
+
+def get_dependabot_alerts(owner: str, repo: str, token: str):
+    """
+    指定したリポジトリの Dependabot Alerts を REST API 経由で取得します。
+    エンドポイント: /repos/{owner}/{repo}/dependabot/alerts
+    """
+    url = f"https://api.github.com/repos/{owner}/{repo}/dependabot/alerts"
+    headers = {"Authorization": f"token {token}"}
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()  # HTTP エラーの場合は例外を発生させる
+    return response.json()

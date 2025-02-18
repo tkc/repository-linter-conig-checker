@@ -15,10 +15,11 @@ from src.usecase.check_ruff import check_ruff_rules
 from src.usecase.check_mypy import check_mypy_ini
 
 
-def process_repository(repo_url: str) -> pd.DataFrame:
+def process_repository(repo: str) -> pd.DataFrame:
     """
     1 つのリポジトリについて、各種チェックを行い結果を DataFrame として返す。
     """
+    repo_url = f"https://github.com/{repo}"
     result_data: Dict[str, Any] = {
         "repository": repo_url,
         "file": None,
